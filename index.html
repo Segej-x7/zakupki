@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс по закупкам в Китае | Вход</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Контент загружается через auth.js -->
+        <div class="loading" style="text-align: center; padding: 50px;">
+            <h2><i class="fas fa-spinner fa-spin"></i> Загрузка системы...</h2>
+        </div>
+    </div>
+    
+    <script>
+        // Скрываем надпись "Загрузка системы..." когда JS выполняется
+        document.addEventListener('DOMContentLoaded', function() {
+            const app = document.getElementById('app');
+            if (app) {
+                // Очищаем содержимое app, чтобы убрать надпись
+                app.innerHTML = '';
+            }
+        });
+        
+        // Глобальная функция для отображения главной страницы курса
+        window.showCourseDashboard = function() {
+            const app = document.getElementById('app');
+            if (!app) {
+                console.error('Элемент #app не найден!');
+                return;
+            }
+            
+            app.innerHTML = `
+                <div class="course-page">
+                    <!-- Шапка сайта -->
+                    <header class="header">
+                        <div class="logo">
+                            <i class="fas fa-warehouse"></i>
+                            <h1>Профессиональные закупки в Китае</h1>
+                        </div>
+                        <button class="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </header>
+                    
+                    <!-- Основной контейнер -->
+                    <div class="main-container">
+                        <!-- Боковое меню -->
+                        <nav class="sidebar">
+                            <div class="sidebar-nav">
+                                <ul>
+                                    <li><a href="pages/introduction.html"><i class="fas fa-home"></i> Введение</a></li>
+                                    <li><a href="pages/module1.html"><i class="fas fa-layer-group"></i> Модуль 1: Фундамент</a></li>
+                                    <li><a href="pages/module2.html"><i class="fas fa-search"></i> Модуль 2: Поставщики</a></li>
+                                    <li><a href="pages/module3.html"><i class="fas fa-user-friends"></i> Модуль 3: Посредники</a></li>
+                                    <li><a href="pages/module4.html"><i class="fas fa-shipping-fast"></i> Модуль 4: Финансы и логистика</a></li>
+                                    <li><a href="pages/module5.html"><i class="fas fa-handshake"></i> Модуль 5: Переговоры</a></li>
+                                    <li><a href="pages/module6.html"><i class="fas fa-tasks"></i> Модуль 6: Практический кейс</a></li>
+                                    <li><a href="pages/conclusion.html"><i class="fas fa-flag-checkered"></i> Заключение</a></li>
+                                    <li><a href="pages/appendices.html"><i class="fas fa-book"></i> Приложения</a></li>
+                                    <li><a href="javascript:void(0)" onclick="window.signOut()"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        
+                        <!-- Основное содержимое -->
+                        <main class="content">
+                            <div class="content-header">
+                                <h2>Добро пожаловать в курс по закупкам в Китае!</h2>
+                                <p>Ваш личный конвейер прибыли начинается здесь</p>
+                            </div>
+                            
+                            <div class="module-content">
+                                <div class="lesson">
+                                    <h3><i class="fas fa-rocket"></i> Вы успешно вошли в систему!</h3>
+                                    <div class="lesson-content">
+                                        <p>Приветствуем вас в профессиональном курсе по закупкам в Китае. Теперь у вас есть доступ ко всем материалам.</p>
+                                        
+                                        <div class="highlight-box">
+                                            <h4><i class="fas fa-check-circle"></i> Что теперь доступно:</h4>
+                                            <ul>
+                                                <li>Полный доступ ко всем 6 модулям курса</li>
+                                                <li>Практические задания и кейсы</li>
+                                                <li>Шаблоны и таблицы для расчетов</li>
+                                                <li>Видео-уроки и инструкции</li>
+                                                <li>Дополнительные материалы в разделе "Приложения"</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <h4><i class="fas fa-play-circle"></i> Как начать обучение:</h4>
+                                        <ol>
+                                            <li><strong>Начните с "Введения"</strong> - ознакомьтесь с философией курса</li>
+                                            <li><strong>Переходите последовательно по модулям</strong> - от 1 до 6</li>
+                                            <li><strong>Выполняйте практические задания</strong> - это ключ к успеху</li>
+                                            <li><strong>Используйте боковое меню</strong> для навигации между разделами</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                
+                                <div class="lesson">
+                                    <h3><i class="fas fa-sitemap"></i> Структура курса</h3>
+                                    <div class="lesson-content">
+                                        <div class="course-structure">
+                                            <div class="module-card" onclick="window.location.href='pages/introduction.html'">
+                                                <h4><i class="fas fa-home"></i> Введение</h4>
+                                                <p>Основные принципы курса и философия обучения</p>
+                                            </div>
+                                            
+                                            <div class="module-card" onclick="window.location.href='pages/module1.html'">
+                                                <h4><i class="fas fa-layer-group"></i> Модуль 1: Фундамент</h4>
+                                                <p>Преодоление страхов и выбор ниши</p>
+                                            </div>
+                                            
+                                            <div class="module-card" onclick="window.location.href='pages/module2.html'">
+                                                <h4><i class="fas fa-search"></i> Модуль 2: Поставщики</h4>
+                                                <p>Где искать и как отличать фабрику от перекупщика</p>
+                                            </div>
+                                            
+                                            <div class="module-card" onclick="window.location.href='pages/module3.html'">
+                                                <h4><i class="fas fa-user-friends"></i> Модуль 3: Посредники</h4>
+                                                <p>Кто они и когда без них не обойтись</p>
+                                            </div>
+                                            
+                                            <div class="module-card" onclick="window.location.href='pages/module4.html'">
+                                                <h4><i class="fas fa-shipping-fast"></i> Модуль 4: Финансы и логистика</h4>
+                                                <p>Оплата, склад и доставка</p>
+                                            </div>
+                                            
+                                            <div class="module-card" onclick="window.location.href='pages/module5.html'">
+                                                <h4><i class="fas fa-handshake"></i> Модуль 5: Переговоры</h4>
+                                                <p>Переговоры, проверка и минимизация рисков</p>
+                                            </div>
+                                            
+                                            <div class="module-card" onclick="window.location.href='pages/module6.html'">
+                                                <h4><i class="fas fa-tasks"></i> Модуль 6: Практический кейс</h4>
+                                                <p>Первая закупка от А до Я</p>
+                                            </div>
+                                            
+                                            <div class="module-card" onclick="window.location.href='pages/conclusion.html'">
+                                                <h4><i class="fas fa-flag-checkered"></i> Заключение</h4>
+                                                <p>Итоги и дальнейшие шаги</p>
+                                            </div>
+                                            
+                                            <div class="module-card" onclick="window.location.href='pages/appendices.html'">
+                                                <h4><i class="fas fa-book"></i> Приложения</h4>
+                                                <p>Дополнительные материалы, шаблоны и таблицы</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="lesson">
+                                    <h3><i class="fas fa-user-circle"></i> Ваш профиль</h3>
+                                    <div class="lesson-content">
+                                        <div class="profile-header">
+                                            <div class="profile-avatar">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div>
+                                                <h4 id="user-email-display">Участник курса</h4>
+                                                <p>Доступ ко всем материалам курса</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="profile-actions">
+                                            <button onclick="window.location.href='pages/introduction.html'" class="btn-primary">
+                                                <i class="fas fa-play"></i> Начать обучение
+                                            </button>
+                                            <button onclick="window.signOut()" class="btn-secondary">
+                                                <i class="fas fa-sign-out-alt"></i> Выйти из системы
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                    
+                    <!-- Подвал -->
+                    <footer class="footer">
+                        <p>Курс по профессиональным закупкам в Китае © 2025</p>
+                    </footer>
+                </div>
+            `;
+            
+            // Устанавливаем email пользователя
+            const userEmail = sessionStorage.getItem('user_email');
+            if (userEmail) {
+                const emailElement = document.getElementById('user-email-display');
+                if (emailElement) {
+                    emailElement.textContent = userEmail;
+                }
+            }
+            
+            // Инициализируем мобильное меню
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            if (menuToggle && sidebar) {
+                menuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('open');
+                    menuToggle.innerHTML = sidebar.classList.contains('open') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+                
+                // Закрытие меню при клике на ссылку
+                const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+                sidebarLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            sidebar.classList.remove('open');
+                            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    });
+                });
+            }
+        };
+    </script>
+    
+    <!-- Подключаем auth.js ПОСЛЕ определения глобальных функций -->
+    <script src="auth.js" defer></script>
+</body>
+</html>

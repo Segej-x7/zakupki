@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата курса | Профессиональные закупки в Китае</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <div class="payment-container">
+            <!-- Шапка -->
+            <header class="payment-header">
+                <a href="../index.html" class="back-btn" id="back-to-course">
+                    <i class="fas fa-arrow-left"></i> Назад к курсу
+                </a>
+                <div class="logo">
+                    <i class="fas fa-warehouse"></i>
+                    <h1>Профессиональные закупки в Китае</h1>
+                </div>
+            </header>
+            
+            <!-- Основной контейнер -->
+            <div class="payment-content">
+                <!-- Левый блок - информация о курсе -->
+                <div class="course-summary">
+                    <div class="summary-header">
+                        <h2><i class="fas fa-shopping-cart"></i> Оформление заказа</h2>
+                        <p>Вы приобретаете полный доступ к курсу</p>
+                    </div>
+                    
+                    <div class="course-details">
+                        <div class="detail-item">
+                            <i class="fas fa-check"></i>
+                            <span>Полный курс "Профессиональные закупки в Китае"</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check"></i>
+                            <span>6 практических модулей</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check"></i>
+                            <span>Видео-уроки и инструкции</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check"></i>
+                            <span>Шаблоны и таблицы для расчетов</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check"></i>
+                            <span>Пожизненный доступ ко всем материалам</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check"></i>
+                            <span>Техническая поддержка</span>
+                        </div>
+                    </div>
+                    
+                    <div class="price-summary">
+                        <div class="price-line">
+                            <span>Стоимость курса:</span>
+                            <span>10 000 руб.</span>
+                        </div>
+                        <div class="price-line discount">
+                            <span>Скидка 70%:</span>
+                            <span>-7 000 руб.</span>
+                        </div>
+                        <div class="price-line total">
+                            <span>Итого к оплате:</span>
+                            <span class="total-price">3 000 руб.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="guarantee-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>Гарантия возврата</strong>
+                            <p>14 дней на возврат средств</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Правый блок - форма оплаты -->
+                <div class="payment-form-container">
+                    <div class="form-header">
+                        <h3><i class="fas fa-credit-card"></i> Данные для оплаты</h3>
+                        <p>Заполните форму ниже для завершения покупки</p>
+                    </div>
+                    
+                    <form id="payment-form" class="payment-form">
+                        <!-- Личные данные -->
+                        <div class="form-section">
+                            <h4><i class="fas fa-user"></i> Личная информация</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Имя и Фамилия *</label>
+                                    <input type="text" id="name" required placeholder="Иван Иванов">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" required placeholder="ваш@email.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон *</label>
+                                <input type="tel" id="phone" required placeholder="+7 (999) 123-45-67">
+                            </div>
+                        </div>
+                        
+                        <!-- Способ оплаты - только ЮMoney -->
+                        <div class="form-section">
+                            <h4><i class="fas fa-wallet"></i> Способ оплаты</h4>
+                            <div class="payment-methods">
+                                <label class="payment-method">
+                                    <input type="radio" name="payment_method" value="yoomoney" checked>
+                                    <div class="method-content">
+                                        <i class="fas fa-wallet"></i>
+                                        <span>ЮMoney</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Соглашения -->
+                        <div class="form-section">
+                            <div class="agreements">
+                                <label class="agreement">
+                                    <input type="checkbox" id="agree-terms" required>
+                                    <span>Я согласен с <a href="offer.html" target="_blank">условиями использования</a> *</span>
+                                </label>
+                                <label class="agreement">
+                                    <input type="checkbox" id="agree-offer" required>
+                                    <span>Я ознакомлен и согласен с <a href="offer.html" target="_blank">публичной офертой</a> *</span>
+                                </label>
+                                <label class="agreement">
+                                    <input type="checkbox" id="agree-processing">
+                                    <span>Я согласен на обработку персональных данных</span>
+                                </label>
+                                <label class="agreement">
+                                    <input type="checkbox" id="agree-newsletter">
+                                    <span>Я хочу получать полезные материалы по email</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Кнопка оплаты -->
+                        <button type="submit" class="payment-submit-btn" id="submit-payment">
+                            <i class="fas fa-lock"></i> Оплатить 3 000 руб.
+                        </button>
+                        
+                        <div class="secure-payment">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Безопасная оплата через защищенное соединение</span>
+                        </div>
+                    </form>
+                    
+                    <div id="payment-message" class="payment-message" style="display: none;"></div>
+                </div>
+            </div>
+            
+            <!-- Подвал -->
+            <footer class="payment-footer">
+                <p>© 2025 Курс "Профессиональные закупки в Китае". Все права защищены.</p>
+                <p><a href="offer.html" target="_blank">Публичная оферта</a></p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

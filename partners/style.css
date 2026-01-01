@@ -1,0 +1,501 @@
+/* Стили для партнерской программы */
+:root {
+    --primary-color: #1C68F3;
+    --secondary-color: #f5f7fa;
+    --accent-color: #FF6B35;
+    --text-dark: #1A1A1A;
+    --text-light: #666;
+    --text-gray: #999;
+    --border-color: #e6e9ee;
+    --success-color: #00C853;
+    --warning-color: #FF9800;
+    --danger-color: #F44336;
+    --shadow-light: 0 2px 16px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 24px rgba(0, 0, 0, 0.12);
+    --radius-small: 4px;
+    --radius-medium: 8px;
+    --radius-large: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.partners-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: var(--shadow-medium);
+}
+
+.partners-header {
+    background: linear-gradient(135deg, var(--primary-color), #764ba2);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo i {
+    font-size: 2rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius-medium);
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.partners-content {
+    padding: 40px 30px;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    background: var(--secondary-color);
+    border-radius: var(--radius-large);
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-medium);
+}
+
+.stat-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.stat-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.stat-card p {
+    color: var(--text-light);
+}
+
+.benefits-section {
+    margin: 60px 0;
+}
+
+.benefits-section h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.benefit-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-large);
+    padding: 30px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), #764ba2);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.benefit-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.benefit-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.how-it-works {
+    margin: 60px 0;
+}
+
+.how-it-works h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    position: relative;
+}
+
+.steps::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--border-color);
+    z-index: 1;
+}
+
+.step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), #764ba2);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+    border: 5px solid white;
+}
+
+.step h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.step p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, rgba(28, 104, 243, 0.05) 0%, rgba(28, 104, 243, 0.02) 100%);
+    border: 1px solid rgba(28, 104, 243, 0.1);
+    border-radius: var(--radius-large);
+    padding: 40px;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.cta-section h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 18px 35px;
+    border-radius: var(--radius-medium);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: none;
+    min-width: 200px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--success-color), #00a848);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 200, 83, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #00b347, #008c3a);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 200, 83, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    color: var(--primary-color);
+}
+
+.registration-form {
+    background: white;
+    border-radius: var(--radius-large);
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: var(--shadow-light);
+    text-align: left;
+}
+
+.registration-form h4 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#partner-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#partner-form input,
+#partner-form textarea {
+    padding: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: var(--secondary-color);
+}
+
+#partner-form input:focus,
+#partner-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(28, 104, 243, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.info-note {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(28, 104, 243, 0.05);
+    border-radius: var(--radius-medium);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.partners-footer {
+    background: var(--text-dark);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .partners-content {
+        padding: 20px;
+    }
+    
+    .hero-section h2 {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .stats-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps::before {
+        display: none;
+    }
+    
+    .step {
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .step-number {
+        min-width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .partners-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .benefit-card,
+    .stat-card {
+        padding: 20px;
+    }
+    
+    .cta-section {
+        padding: 20px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+}
